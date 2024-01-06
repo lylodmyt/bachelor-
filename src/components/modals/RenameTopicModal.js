@@ -82,7 +82,6 @@ class RenameTopicModal extends Component {
     };
 
     render() {
-        console.log(this.props.initialTitle);
         return (
             <Modal show={this.props.show} onHide={this.handleClose} size="lg" centered>
                 <Modal.Header>

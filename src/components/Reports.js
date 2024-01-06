@@ -51,8 +51,6 @@ class Reports extends Component {
                 },
             })
             .then((response) => {
-                console.log("Report deleted:", response.data);
-                // After successful deletion, fetch the reports again to update the UI
                 this.fetchReports();
             })
             .catch((error) => {

@@ -32,7 +32,6 @@ class Public extends Component {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((response) => {
-                console.log(response.data);
                 this.setState({ tests: response.data, loading: false });
             })
             .catch((error) => {

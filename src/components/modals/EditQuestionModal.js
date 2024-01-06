@@ -35,7 +35,6 @@ class EditQuestionModal extends Component {
                 },
             })
             .then(({ data: question }) => {
-                console.log(question);
                 this.setState({
                     questionTextOld: question.title,
                     questionTextNew: question.title,

@@ -36,7 +36,6 @@ class Tests extends Component {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((response) => {
-                console.log(response.data);
                 this.setState({ tests: response.data, loading: false });
             })
             .catch((error) => {
@@ -59,7 +58,6 @@ class Tests extends Component {
                 headers: { Authorization: `Bearer ${AuthService.getCurrentUser().token}` },
             })
             .then((response) => {
-                console.log("Test deleted:", response.data);
                 this.fetchTests();
             })
             .catch((error) => {
@@ -79,7 +77,6 @@ class Tests extends Component {
                 headers: { Authorization: `Bearer ${AuthService.getCurrentUser().token}` },
             })
             .then((response) => {
-                console.log("Test updated:", response.data);
                 this.fetchTests();
             })
             .catch((error) => {
@@ -93,6 +90,7 @@ class Tests extends Component {
 
     handleCloseModal = () => {
         this.setState({ isCreateTestModalOpen: false });
+        this.fetchTests();
     };
 
     render() {

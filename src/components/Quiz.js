@@ -94,8 +94,6 @@ class Quiz extends Component {
     };
 
     handleFinishButtonClick = () => {
-        console.log("Test Questions:", this.state.testQuestions);
-        console.log("Selected answers:", this.state.selectedAnswers);
         const correctQuestions = [];
         const wrongQuestions = [];
 
@@ -117,13 +115,9 @@ class Quiz extends Component {
             wrongQuestions: wrongQuestions,
             showModal: true,
         });
-
-        console.log("Correct questions:", correctQuestions);
-        console.log("Wrong questions:", wrongQuestions);
     };
 
     render() {
-        console.log(this.state.testQuestions);
         const { testQuestions, selectedAnswers, showModal } = this.state;
         return (
             <Container className="mt-4 mb-4">

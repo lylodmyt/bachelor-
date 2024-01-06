@@ -83,7 +83,6 @@ class Topics extends Component {
                 headers: { Authorization: `Bearer ${AuthService.getCurrentUser().token}` },
             })
             .then((response) => {
-                console.log('Test deleted:', response.data);
                 this.fetchTopics();
             })
             .catch((error) => {
