@@ -91,7 +91,7 @@ class Public extends Component {
                                     </Button>
                                     {AuthService.getCurrentUser().roles[0] === "ADMIN" && (
                                         <Button
-                                            variant="delete"
+                                            variant="danger"
                                             onClick={() => this.handleUpdateTest(test.id, test.title)}
                                         >
                                             Remove from public
