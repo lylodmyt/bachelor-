@@ -103,7 +103,7 @@ class Topics extends Component {
                         <Button className="float-right" variant="primary" onClick={() => this.handleOpenCreateModal("topic")}>Create topic</Button>
                     </div>
                     <Alert className="alert-warning">
-                        No test to display.
+                        No topics to display.
                     </Alert>
                     <CreateTopicModal
                         show={this.state.showModal}

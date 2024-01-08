@@ -75,7 +75,7 @@ class Login extends Component {
                 <section className="jumbotron jumbotron-fluid text-center">
                     <div className="container">
                         <h1 className="jumbotron-heading">TestQuiz</h1>
-                        <p className="lead text-muted">Application for creating and running your tests.</p>
+                        <p className="lead text-muted">Application for creating and running your tests</p>
                     </div>
                 </section>
                 <Card className="mb-5">

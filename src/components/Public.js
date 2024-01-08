@@ -44,6 +44,25 @@ class Public extends Component {
         this.props.router.navigate("/quiz/" + id);
     }
 
+    handleUpdateTest = (id, title) => {
+        const testDto = {
+            id,
+            title,
+            published: false,
+        };
+
+        axios
+            .put(`${TEST_API_URL}update`, testDto, {
+                headers: { Authorization: `Bearer ${AuthService.getCurrentUser().token}` },
+            })
+            .then((response) => {
+                this.fetchTests();
+            })
+            .catch((error) => {
+                console.error("Error updating test:", error);
+            });
+    };
+
     render() {
         const { redirect, tests, loading, error } = this.state;
 
@@ -70,6 +89,14 @@ class Public extends Component {
                                     >
                                         Run
                                     </Button>
+                                    {AuthService.getCurrentUser().roles[0] === "ADMIN" && (
+                                        <Button
+                                            variant="delete"
+                                            onClick={() => this.handleUpdateTest(test.id, test.title)}
+                                        >
+                                            Remove from public
+                                        </Button>
+                                    )};
                                 </ButtonGroup>
                             </Card.Body>
                             <Card.Footer>
