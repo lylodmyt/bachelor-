@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Outlet } from "react-router-dom";
+import {Link, Navigate, Outlet} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import { routeHelper } from "../helpers/routeHelper";
 
@@ -19,6 +19,9 @@ class NavigationBar extends Component {
         const { currentUser } = this.state;
         const isAdmin = currentUser.roles[0] === "ADMIN";
 
+        if (!currentUser) {
+            return <Navigate to="/" />;
+        }
         return (
             <div>
                 <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
