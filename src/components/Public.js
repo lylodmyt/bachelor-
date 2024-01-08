@@ -96,7 +96,7 @@ class Public extends Component {
                                         >
                                             Remove from public
                                         </Button>
-                                    )};
+                                    )}
                                 </ButtonGroup>
                             </Card.Body>
                             <Card.Footer>
